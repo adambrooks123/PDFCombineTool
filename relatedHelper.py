@@ -53,7 +53,6 @@ def fileIDModifier(path, des_path, changeDirectly, showProcess):
         oldName = path + os.sep + fileName
         newName = "%05d"%id + '-' +  fileName
         total += 1
-        id += 1
 
         if oldName[-4:] == '.pdf':
             if changeDirectly:
@@ -66,6 +65,8 @@ def fileIDModifier(path, des_path, changeDirectly, showProcess):
                 print(oldName, ' ------> ', newName)
                 print(str(total) + 'File has Processed.')
                 print('-'*25)
+                
+            id += 1
         else:
             errFile.append(fileName)
 
