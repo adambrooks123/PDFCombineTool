@@ -27,6 +27,7 @@ The necessary packages and user instructions could be found in `fileCombine.py`.
     The generated cover page look like this: 
     ![Cover](/Pics/generatedfile.png)
 
+3. Run the `fileCombine.py` file again and select 2 if the generated files needs to be combined to each files. 
 
 -----------------------------------------------------------------------------------------------
 Hope this program could help you! 
