@@ -37,7 +37,7 @@ desPath = '...'
 
 # Change this to TRUE if use ENG prompt
 # 如果需要使用英文提示，请将此处设为True
-useENG = False
+useENG = True
 
 # Change this to 1 if want to add the cover page to the end of each file
 # 如需将页面置于文件末尾，将此处设为1

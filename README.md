@@ -13,6 +13,22 @@ There are cases in the daily working that requires to handle multiple PDF files.
 
 The necessary packages and user instructions could be found in `fileCombine.py`. Please followed all the aspects to make sure the program could run smoothly. And the help functons were moved to `relatedHelper.py`, modify the functions inside for more personalised experience. 
 
+**Sample:**
+
+1. Put the original files inside the folder and modify the `fileCombine.py` file. The sample files was shown below: 
+    ![Origin](/Pics/step1.png)
+
+2. Run the `fileCombine.py` file and choose 1 when prompt, the prompt is:
+    ![Prompt](/Pics/prompt.png)
+
+    When the program finished, the generated files should be inside the destinaion folder: 
+    ![Changed](/Pics/step1_end.png)
+
+    The generated cover page look like this: 
+    ![Cover](/Pics/generatedfile.png)
+
+
 -----------------------------------------------------------------------------------------------
 Hope this program could help you! 
+
 Adam @ 23/MAR/2021

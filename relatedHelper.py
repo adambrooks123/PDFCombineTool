@@ -23,6 +23,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus.flowables import Spacer
 from reportlab.lib.units import inch
+# Change 'simsun.ttf' to the path of the font file if can't open the file
 pdfmetrics.registerFont(TTFont('song', 'simsun.ttf'))
 
 def fileIDModifier(path, des_path, changeDirectly, showProcess):
@@ -104,12 +105,12 @@ def createPDF(names, destination, showProcess):
             id = originName[:5]
             originName = originName[6:]
 
-        text1 = '<para><font face = "song"> #CONTENT# </font></para>'
+        text1 = '<para><font face = "song"> '+ originName +' </font></para>'
         text2 = '<para align = "right"><font face = "song"> #CONTENT# </font></para>'
         text3 = '<para align = "right"><font face = "song"> #CONTENT# </font></para>'
 
         fileElements.append(Paragraph(text1, Style['Heading2']))
-        fileElements.append(Spacer(1, 3*inch))
+        fileElements.append(Spacer(1, 1.5*inch))
         fileElements.append(Paragraph(text2, Style['Heading2']))
         fileElements.append(Paragraph(text3, Style['Heading2']))
 
