@@ -10,6 +10,8 @@
 # V2.1 Rewrite the help functions and redo the program logic  
 # V2.2 Add the ENG description and language choice option
 # V2.3 Add the option that could choose the location of cover page[Start/ End]
+# V2.4 Add error count for page merge
+# V2.5 Rewrite the page-merge function(use PDFFileMerger instead)
 
 '''
 # PREREQUISITION:
@@ -29,11 +31,11 @@ import relatedHelper
 
 # Fill the folder contains the original file
 # 此处填写文件所在的文件夹位置
-path = '...'
+path = '/Users/adam/Desktop/PDFCombineTool/test1'
 
 # Fill the destination folder
 # 此处填写需要复制到的文件夹位置
-desPath = '...'
+desPath = '/Users/adam/Desktop/PDFCombineTool/test2'
 
 # Change this to TRUE if use ENG prompt
 # 如果需要使用英文提示，请将此处设为True
@@ -41,7 +43,7 @@ useENG = True
 
 # Change this to 1 if want to add the cover page to the end of each file
 # 如需将页面置于文件末尾，将此处设为1
-coverPageLoc = 0
+coverPageLoc = 1
 
 
 #####################################################################################
