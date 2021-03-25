@@ -14,7 +14,7 @@ Modify: fileIDModifier for changes related to naming rules
 
 # Import the necessary packages 
 import os, re
-from PyPDF4 import PdfFileReader, PdfFileWriter
+from PyPDF4 import PdfFileReader, PdfFileWriter, PdfFileMerger
 from shutil import copy2
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph,SimpleDocTemplate
@@ -175,7 +175,9 @@ def merge_pages(path, names, singleFile, showProcess, order = 0):
 
     print("===========< MERGE BASED ON ID START >===========")
     print("PROCESSING......")
+    errList = []
     total = 0
+    errCount = 0
     scannedFileReader = PdfFileReader(os.path.join(path, singleFile))
     for page in range(scannedFileReader.getNumPages()):
         for name in names:
@@ -195,11 +197,21 @@ def merge_pages(path, names, singleFile, showProcess, order = 0):
 
                     if showProcess: print("DELETING - {} - ID {}".format(name, page))
                     os.remove(namePath)
-                    with open(namePath, 'wb') as out:
-                        pdfWriter.write(out)
+                    
+                    try:
+                        with open(namePath, 'wb') as out:
+                            pdfWriter.write(out)
+                    except Exception as e:
+                        print("ERROR WITH ID {}".format(page))
+                        errCount += 1
+                        errList.append(name)
                     total += 1
+
     print("===========<MERGE BASED ON ID COMPLETED>===========")
     print("{} files has been processed.".format(total))
+    if errCount != 0: 
+        print("--->{} ERROR FILE -> ".format(errCount))
+        for item in errList: print(item)
     print("=" * 40)
 
 
