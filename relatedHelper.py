@@ -14,7 +14,7 @@ Modify: fileIDModifier for changes related to naming rules
 
 # Import the necessary packages 
 import os, re
-from PyPDF4 import PdfFileReader, PdfFileWriter, PdfFileMerger
+from PyPDF4 import PdfFileReader, PdfFileWriter
 from shutil import copy2
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph,SimpleDocTemplate
